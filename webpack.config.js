@@ -12,9 +12,10 @@ const config = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
-          presets: ['env', 'react'],
-        },
+      },
+      {
+        test: /\.css$/,
+        loaders: ['style-loader', 'css-loader'],
       },
     ],
   },
