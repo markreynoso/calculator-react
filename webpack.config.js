@@ -4,17 +4,20 @@ const config = {
   entry: path.join(__dirname, '/public/scripts/index.js'),
   output: {
     path: path.join(__dirname, './build'),
-    filename: 'bundle.[hash].js'
+    filename: 'bundle.[hash].js',
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
-      }
-    ]
-  }
+        loader: 'babel-loader',
+        query: {
+          presets: ['env', 'react'],
+        },
+      },
+    ],
+  },
 };
 
 module.exports = config;
